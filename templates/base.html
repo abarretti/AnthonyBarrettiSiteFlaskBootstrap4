@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<!-- title -->
+	<title>Anthony Barretti - {% block title %} Page Name {% endblock %}</title>
+	<!-- link -->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='imgs/sphereBlue.png') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='node_modules/font-awesome/css/font-awesome.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='node_modules/bootstrap-social/bootstrap-social.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+{% block body %} Body Class {% endblock %}
+{% block header %} Header Class {% endblock %}
+	<button class='navbar-toggler d-block d-lg-none' data-toggle='collapse' data-target='#collapseNavBar'>
+		&#9776;
+	</button>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-5">
+				<a href="{{ url }}">
+					<h1>Anthony Barretti</h1>
+				</a>
+			</div>
+			<div class="d-none d-lg-block col-lg-1">
+				<a href="{{ url }}">
+					<figure>
+						<img src= "{{ url_for('static', filename='imgs/sphereBlue.png') }}" alt= "Sphere Blue">
+					</figure>
+				</a>
+			</div>
+			<div class="col-md-12 col-lg-6 d-lg-block d-xl-block" id="collapseNavBar">
+				<nav class="navbar">
+						<div><a href="{{ url }}" {% if dir == '' %}class="active"{% endif %}>Home</a></div>
+						<div><a href="{{ url }}/about" {% if dir == 'about' %}class="active"{% endif %}>About</a></div>
+						<div class="dropdown">
+								<a href="{{ url }}/cv" {% if dir == 'cv' %}class="active"{% endif %}>CV</a>
+								<div class="dropdown-content">
+								<a href="{{ url }}/cv#education">Education</a>
+								<a href="{{ url }}/cv#skills">Skills</a>
+								<a href="{{ url }}/cv#experience">Experience</a>
+								<a href="{{ url }}/cv#coursework">Coursework</a>
+								</div>
+						</div>
+						<div><a href="{{ url }}/contact" {% if dir == 'contact' %}class="active"{% endif %}>Contact</a></div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
+	{% block main %} {% endblock %}
+	{% block footer %} Footer Class {% endblock %}
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-3">
+				<a href="https://www.linkedin.com/in/anthony-barretti-95a57687/" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/linkedIn_logo_initials.png') }}" alt= "LinkedIn Logo"/>
+				</a>
+				<a href="https://github.com/abarretti/" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/gitHub-mark-120px-plus.png') }}" alt= "Github Logo"/>
+				</a>
+				<a href="https://www.hackerrank.com/aebarretti87/" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/hackerRankMain.png') }}" alt= "hackerRank Logo"/>
+				</a>
+			</div>
+			<div class="col-sm-12 col-md-4">
+				&copy; Anthony Barretti {{ now.year }}
+			</div>
+			<div class="col-sm-12 col-md-5">
+				<a href="https://www.coursera.org/user/f4d3550b3ade029ff335f7125cdbed51" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/coursera-logo.png') }}" alt= "Coursera Logo"/>
+				</a>
+				<a href="https://www.udemy.com/user/anthony-barretti/" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/udemyU.png') }}" alt= "Udemy Logo"/>
+				</a>
+				<a href="https://exercism.io/profiles/abarretti/" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/exercismMain.png') }}" alt= "Exercism Logo"/>
+				</a>
+				<a href="https://www.codecademy.com/profiles/aebarretti87/" class="image" target="_blank">
+					<img src="{{ url_for('static', filename='imgs/codeAcademy.png') }}" alt= "CodeAcademy Logo"/>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+  <script src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.slim.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='node_modules/popper.js/dist/umd/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
